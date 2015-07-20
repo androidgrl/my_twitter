@@ -1,6 +1,7 @@
 <h1>Welcome to my_twitter App!</h1>
 <% if current_user %>
-  Welcome <%= current_user.name %>!
+  <%= render partial: 'dashboard' %>
+  <h1>Welcome <%= current_user.name %>!</h1>
   <%= link_to "Logout", logout_path %>
 <% else %>
   <h2>Please login with your Twitter Account.</h2>
