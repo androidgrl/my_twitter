@@ -10,6 +10,17 @@ class UserLogsInWithTwitterTest < ActionDispatch::IntegrationTest
     assert page.has_link?("Logout")
   end
 
+  test "logging out" do
+    visit "/"
+    assert_equal 200, page.status_code
+    click_on "Login"
+    click_on "Logout"
+    assert_equal "/", current_path
+    assert page.has_link?("Login")
+    refute page.has_link?("Logout")
+    refute page.has_content?("Jamie")
+  end
+
   def stub_omniauth
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:twitter] =
