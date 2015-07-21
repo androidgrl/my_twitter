@@ -1285,7 +1285,7 @@ data-fouc-class-names="swift-loading"
 
     <div class="stream home-stream">
         <ol class="stream-items js-navigable-stream" id="stream-items-id">
-
+<% current_user.twitter_timeline.each do |tweet| %>
       <li class="js-stream-item stream-item stream-item expanding-stream-item
 " data-item-id="623599153088565248" id="stream-item-tweet-623599153088565248" data-item-type="tweet">
 
@@ -1384,7 +1384,7 @@ data-expanded-footer="&lt;div class=&quot;js-tweet-details-fixer tweet-details-f
           <p class="u-hiddenVisually" aria-hidden="true" data-aria-label-part="1">Vikas Reddy retweeted DHH</p>
 
 
-          <p class="TweetTextSize  js-tweet-text tweet-text" lang="en" data-aria-label-part="4"><%#= tweet.text %>Hello this is a test <a href="https://t.co/F7QQUcYyoi" rel="nofollow" dir="ltr" data-expanded-url="https://twitter.com/dhh/status/623598101127897088" class="twitter-timeline-link u-hidden" target="_blank" title="https://twitter.com/dhh/status/623598101127897088" ><span class="tco-ellipsis"></span><span class="invisible">https://</span><span class="js-display-url">twitter.com/dhh/status/623</span><span class="invisible">598101127897088</span><span class="tco-ellipsis"><span class="invisible">&nbsp;</span>…</span></a></p>
+          <p class="TweetTextSize  js-tweet-text tweet-text" lang="en" data-aria-label-part="4"><%#= tweet.text %><%= tweet.text %> <a href="https://t.co/F7QQUcYyoi" rel="nofollow" dir="ltr" data-expanded-url="https://twitter.com/dhh/status/623598101127897088" class="twitter-timeline-link u-hidden" target="_blank" title="https://twitter.com/dhh/status/623598101127897088" ><span class="tco-ellipsis"></span><span class="invisible">https://</span><span class="js-display-url">twitter.com/dhh/status/623</span><span class="invisible">598101127897088</span><span class="tco-ellipsis"><span class="invisible">&nbsp;</span>…</span></a></p>
 
 
 <p class="u-hiddenVisually" aria-hidden="true" data-aria-label-part="3">Vikas Reddy added,</p>
@@ -1578,16 +1578,7 @@ data-expanded-footer="&lt;div class=&quot;js-tweet-details-fixer tweet-details-f
 
 
 
-
-
-
-
-
-
-
-
-
-
+<% end %>
 
 
         </ol>
