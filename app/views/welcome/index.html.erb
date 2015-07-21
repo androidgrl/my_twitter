@@ -2,7 +2,16 @@
 <% if current_user %>
   <%= render partial: 'dashboard' %>
   <h1>Welcome <%= current_user.name %>!</h1>
+  <h1>Your Twitter Timeline!</h1>
   <%= link_to "Logout", logout_path %>
+  <ol>
+  <% current_user.twitter_timeline.each do |tweet| %>
+    <li>
+      <%= distance_of_time_in_words(Time.new, tweet.created_at) %> ago <%= tweet.user.screen_name %> said:
+      <%= tweet.text %>
+    </li>
+  <% end %>
+  </ol>
 <% else %>
   <h2>Please login with your Twitter Account.</h2>
   <%= link_to "Login", login_path %>
