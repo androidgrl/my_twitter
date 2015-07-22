@@ -11,7 +11,8 @@ class User < ActiveRecord::Base
               profile_url: auth_info.extra.raw_info.profile_image_url,
               background_url: auth_info.extra.raw_info.profile_banner_url,
               followers_count: auth_info.extra.raw_info.followers_count,
-              friends_count: auth_info.extra.raw_info.friends_count})
+              friends_count: auth_info.extra.raw_info.friends_count,
+              tweet_count: auth_info.extra.raw_info.statuses_count})
     end
   end
 
