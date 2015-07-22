@@ -901,9 +901,11 @@ data-fouc-class-names="swift-loading"
       method="post"
       target="tweet-post-iframe"
         data-condensed-text="What’s happening?"
-      action="//upload.twitter.com/i/tweet/create_with_media.iframe"
+      action=""
       enctype="multipart/form-data">
-          <input type="text" value="" name="use_tweet_ui_metrics" placeholder="What's Happening Hot Stuff?">
+          <label for="tweet">Tweet</label>
+          <input type="text" id="tweet" value="" name="user[tweet]" placeholder="What's Happening Hot Stuff?">
+          <input type="submit" value="Submit">
     <img class="inline-reply-user-image avatar size32" src="https://pbs.twimg.com/profile_images/507779745493184512/62BVjcJH_normal.jpeg" alt="">
   <span class="inline-reply-caret">
     <span class="caret-inner"></span>
