@@ -797,7 +797,7 @@ data-fouc-class-names="swift-loading"
               href="/following"
               data-element-term="follower_stats">
             <span class="DashboardProfileCard-statLabel u-block">Following</span>
-            <span class="DashboardProfileCard-statValue" data-is-compact="false">81</span>
+            <span class="DashboardProfileCard-statValue" data-is-compact="false"><%= current_user.friends_count %></span>
           </a>
         </li><li class="DashboardProfileCard-stat Arrange-sizeFit">
           <a class="DashboardProfileCard-statLink u-textUserColor u-linkClean u-block js-nav"
@@ -805,7 +805,7 @@ data-fouc-class-names="swift-loading"
               href="/followers"
               data-element-term="following_stats">
             <span class="DashboardProfileCard-statLabel u-block">Followers</span>
-            <span class="DashboardProfileCard-statValue" data-is-compact="false">50</span>
+            <span class="DashboardProfileCard-statValue" data-is-compact="false"><%= current_user.followers_count %></span>
           </a>
         </li>
     </ul>
