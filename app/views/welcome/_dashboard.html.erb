@@ -675,7 +675,7 @@ data-fouc-class-names="swift-loading"
   </form>
 </div>
 <ul class="nav right-actions"><li class="me dropdown session js-session" data-global-action="t1me" id="user-dropdown">
-                <a href="/settings/account" class="btn js-tooltip settings dropdown-toggle js-dropdown-toggle" id="user-dropdown-toggle" title="Profile and settings" data-placement="bottom"><img class="avatar size32" src="https://pbs.twimg.com/profile_images/507779745493184512/62BVjcJH_normal.jpeg" alt="Profile and settings" data-user-id="2579384508"></a>
+    <a href="/settings/account" class="btn js-tooltip settings dropdown-toggle js-dropdown-toggle" id="user-dropdown-toggle" title="Profile and settings" data-placement="bottom"><img class="avatar size32" src="<%= current_user.profile_url %>" alt="Profile and settings" data-user-id="<%= current_user.uid %>"></a>
                 <div class="dropdown-menu">
     <div class="dropdown-caret">
       <span class="caret-outer"></span>
@@ -770,15 +770,15 @@ data-fouc-class-names="swift-loading"
 
 
           <a class="DashboardProfileCard-avatarLink u-inlineBlock" href="/androidgrl" title="Jamie Kawahara" tabindex="-1" aria-hidden="true">
-            <img class="DashboardProfileCard-avatarImage js-action-profile-avatar" src="https://pbs.twimg.com/profile_images/507779745493184512/62BVjcJH_bigger.jpeg" alt="">
+            <img class="DashboardProfileCard-avatarImage js-action-profile-avatar" src="<%= current_user.profile_url %>">
           </a>
 
       <div class="DashboardProfileCard-userFields">
         <div class="DashboardProfileCard-name u-textTruncate">
-          <a class="u-textInheritColor" href="/androidgrl">Jamie Kawahara</a>
+        <a class="u-textInheritColor" href="/#{current_user.screen_name}"><%= current_user.name %></a>
         </div>
         <span class="DashboardProfileCard-screenname u-inlineBlock u-dir" dir="ltr">
-          <a class="DashboardProfileCard-screennameLink u-linkComplex u-linkClean" href="/androidgrl">@<span class="u-linkComplex-target">androidgrl</span></a>
+          <a class="DashboardProfileCard-screennameLink u-linkComplex u-linkClean" href="/androidgrl">@<span class="u-linkComplex-target"><%= current_user.screen_name %></span></a>
         </span>
       </div>
 
@@ -895,7 +895,7 @@ data-fouc-class-names="swift-loading"
 
   <div class="timeline-tweet-box">
     <div class="home-tweet-box tweet-box component tweet-user">
-        <img class="top-timeline-tweet-box-user-image avatar size32" src="https://pbs.twimg.com/profile_images/507779745493184512/62BVjcJH_normal.jpeg" alt="">
+      <img class="top-timeline-tweet-box-user-image avatar size32" src="<%= current_user.profile_url %>" alt="">
         <form class="t1-form tweet-form
         condensed"
       method="post"
