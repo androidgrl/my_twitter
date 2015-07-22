@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
               uid: auth_info.uid,
               oauth_token: auth_info.credentials.token,
               oauth_token_secret: auth_info.credentials.secret,
-              profile_url: auth_info.extra.raw_info.profile_image_url})
+              profile_url: auth_info.extra.raw_info.profile_image_url,
+              background_url: auth_info.extra.raw_info.profile_banner_url})
     end
   end
 
