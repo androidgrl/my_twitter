@@ -1,10 +1,10 @@
 <h1>Welcome to my_twitter App!</h1>
 <% if current_user %>
-  <%= render partial: 'dashboard' %>
   <img src="<%= current_user.profile_url %>">
   <h1>Welcome <%= current_user.name %>!</h1>
   <h1>Your Twitter Timeline!</h1>
   <%= link_to "Logout", logout_path %>
+  <%= render partial: 'dashboard' %>
 <% else %>
   <h2>Please login with your Twitter Account.</h2>
   <%= link_to "Login", login_path %>
