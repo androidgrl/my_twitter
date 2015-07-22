@@ -903,9 +903,11 @@ data-fouc-class-names="swift-loading"
         data-condensed-text="What’s happening?"
       action=""
       enctype="multipart/form-data">
-          <label for="tweet">Tweet</label>
-          <input type="text" id="tweet" value="" name="user[tweet]" placeholder="What's Happening Hot Stuff?">
-          <input type="submit" value="Submit">
+          <%= form_tag("/tweet", method: "post") do %>
+            <%= label_tag(:tweet, "Tweet") %>
+            <%= text_field_tag(:tweet) %>
+            <%= submit_tag("Submit") %>
+          <% end %>
     <img class="inline-reply-user-image avatar size32" src="https://pbs.twimg.com/profile_images/507779745493184512/62BVjcJH_normal.jpeg" alt="">
   <span class="inline-reply-caret">
     <span class="caret-inner"></span>
@@ -1036,7 +1038,6 @@ data-fouc-class-names="swift-loading"
 
 
 
-    <textarea aria-hidden="true" class="tweet-box-shadow" name="status"></textarea>
 
 
     <div class="thumbnail-container">
@@ -1051,24 +1052,9 @@ data-fouc-class-names="swift-loading"
 </button>
 
         <button type="button" class="preview-overlay edit js-edit" tabindex="-1">
-    Trim
 </button>
 
-        <div class="play-button">
-          <div class="Icon Icon--mediafill"></div>
-          <div class="Icon Icon--mediaplay"><span class="u-hiddenVisually">Play</span></div>
-        </div>
-        <span class="filename"></span>
-      </div>
-      <div class="preview-message">
-          <button type="button" class="start-tagging js-open-user-select no-users u-borderUserColorLight u-textUserColor" disabled>
-            <span class="Icon Icon--me Icon--smallest"></span>
-            <span class="tagged-users">
-              Who's in these photos?
-            </span>
-          </button>
-      </div>
-    </div>
+     </div>
       <div class="photo-tagging-container user-select-container hidden">
         <div class="tagging-dropdown dropdown-menu">
           <div class="dropdown-caret center">
@@ -1210,59 +1196,14 @@ data-fouc-class-names="swift-loading"
   <div class="toolbar js-toolbar">
     <div class="tweet-box-extras">
 
-        <span class="TweetBox-mediaPicker"><div class="photo-selector">
-  <button aria-hidden="true" class="btn icon-btn" type="button" tabindex="-1">
-    <span class="tweet-camera Icon Icon--camera js-tooltip" title="Add Photo"></span>
-    <span class="text add-photo-label  u-hideMediumViewport">Add photo</span>
-  </button>
-  <div class="image-selector">
-    <input type="hidden" name="media_data_empty" class="file-data">
-    <div class="multi-photo-data-container hidden">
-    </div>
-    <label class="t1-label">
-      <span class="visuallyhidden">Add Photo</span>
-      <input type="file" name="media_empty" accept="image/gif,image/jpeg,image/jpg,image/png" class="file-input js-tooltip" tabindex="-1" title="Add Photo">
-    </label>
-    <div class="swf-container"></div>
-  </div>
-</div>
-</span>
-
-        <div class="geo-picker">
-  <button class="btn js-geo-search-trigger geo-picker-btn icon-btn js-tooltip" type="button" tabindex="-1" title="Add location">
-    <span class="Icon Icon--geo"></span>
-    <span class="text geo-status">Add location</span>
-  </button>
-  <span class="dropdown-container"></span>
-  <input type="hidden" name="place_id">
-</div>
-
-
-
 
       <div class="TweetBoxUploadProgress">
-  Uploading
   <div class="TweetBoxUploadProgress-bar">
     <div class="TweetBoxUploadProgress-barPosition"></div>
   </div>
 </div>
     </div>
-    <div class="tweet-button">
-      <span class="spinner"></span>
-      <span class="tweet-counter">140</span>
-      <button class="btn primary-btn tweet-action disabled tweet-btn js-tweet-btn" type="button" disabled>
-  <span class="button-text tweeting-text">
-    <span class="Icon Icon--tweet"></span>
-    Tweet
-  </span>
-  <span class="button-text messaging-text">
-    <span class="Icon Icon--dm Icon--small"></span>
-    Send message
-  </span>
-</button>
-
-    </div>
-  </div>
+ </div>
 </form>
 
     </div>
@@ -1385,40 +1326,6 @@ data-expanded-footer="&lt;div class=&quot;js-tweet-details-fixer tweet-details-f
 
 
 <p class="u-hiddenVisually" aria-hidden="true" data-aria-label-part="3">Vikas Reddy added,</p>
-
-    <div class="QuoteTweet
-
-    u-block js-tweet-details-fixer">
-  <div class="QuoteTweet-container">
-    <div class="QuoteTweet-innerContainer u-cf js-permalink js-media-container"
-      data-item-id="623598101127897088"
-      data-item-type="tweet"
-      data-screen-name="dhh"
-      data-user-id="14561327"
-      href="/dhh/status/623598101127897088"
-
-      tabindex="0">
-      <div class="tweet-content">
-        <div class="QuoteTweet-authorAndText u-alignTop">
-
-  <span class="QuoteTweet-originalAuthor u-cf u-textTruncate stream-item-header js-user-profile-link">
-    <b class="QuoteTweet-fullname u-linkComplex-target">DHH</b>
-    <span class="QuoteTweet-screenname u-dir" dir="ltr">
-      <span class="at">@</span>dhh
-    </span>
-  </span>
-
-
-          <div class="QuoteTweet-text tweet-text u-dir js-ellipsis"
-            lang="en"
-            data-aria-label-part="2"
-
-            dir="ltr">Programmers are constantly making things more complicated than they need to be BECAUSE FUTURE. Fuck the future. Program for today.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 
@@ -2419,25 +2326,7 @@ data-expanded-footer="&lt;div class=&quot;js-tweet-details-fixer tweet-details-f
   </span>
 </button>
 
-        <button type="button" class="preview-overlay edit js-edit" tabindex="-1">
-    Trim
-</button>
-
-        <div class="play-button">
-          <div class="Icon Icon--mediafill"></div>
-          <div class="Icon Icon--mediaplay"><span class="u-hiddenVisually">Play</span></div>
-        </div>
-        <span class="filename"></span>
-      </div>
-      <div class="preview-message">
-          <button type="button" class="start-tagging js-open-user-select no-users u-borderUserColorLight u-textUserColor" disabled>
-            <span class="Icon Icon--me Icon--smallest"></span>
-            <span class="tagged-users">
-              Who's in these photos?
-            </span>
-          </button>
-      </div>
-    </div>
+   </div>
       <div class="photo-tagging-container user-select-container hidden">
         <div class="tagging-dropdown dropdown-menu">
           <div class="dropdown-caret center">
@@ -4407,10 +4296,6 @@ data-expanded-footer="&lt;div class=&quot;js-tweet-details-fixer tweet-details-f
     Trim
 </button>
 
-        <div class="play-button">
-          <div class="Icon Icon--mediafill"></div>
-          <div class="Icon Icon--mediaplay"><span class="u-hiddenVisually">Play</span></div>
-        </div>
         <span class="filename"></span>
       </div>
       <div class="preview-message">
