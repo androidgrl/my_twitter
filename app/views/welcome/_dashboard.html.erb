@@ -905,7 +905,7 @@ data-fouc-class-names="swift-loading"
       enctype="multipart/form-data">
           <%= form_tag("/tweet", method: "post") do %>
             <%= label_tag(:tweet, "Tweet") %>
-            <%= text_field_tag(:tweet) %>
+            <%= text_field_tag(:tweet, "What's happening hot stuff?") %>
             <%= submit_tag("Submit") %>
           <% end %>
     <img class="inline-reply-user-image avatar size32" src="https://pbs.twimg.com/profile_images/507779745493184512/62BVjcJH_normal.jpeg" alt="">
@@ -1326,29 +1326,11 @@ data-expanded-footer="&lt;div class=&quot;js-tweet-details-fixer tweet-details-f
 
 
 <p class="u-hiddenVisually" aria-hidden="true" data-aria-label-part="3">Vikas Reddy added,</p>
-
-
-
-
-
-
-
-
-
   <div class="expanded-content js-tweet-details-dropdown">
-
   </div>
-
-
-
       <div class="stream-item-footer">
-
-
-
-
       <span class="ProfileTweet-action--reply u-hiddenVisually"></span>
       <span class="ProfileTweet-action--retweet u-hiddenVisually">
-
         <span class="ProfileTweet-actionCount" aria-hidden="true" data-tweet-stat-count="0">
           <span class="ProfileTweet-actionCountForAria" >0 retweets</span>
         </span>
@@ -1359,7 +1341,6 @@ data-expanded-footer="&lt;div class=&quot;js-tweet-details-fixer tweet-details-f
         </span>
       </span>
     <div role="group" aria-label="Tweet actions" class="ProfileTweet-actionList u-cf js-actions">
-
       <div class="ProfileTweet-action ProfileTweet-action--reply">
         <button class="ProfileTweet-actionButton u-textUserColorHover js-actionButton js-actionReply js-tooltip"
           data-modal="ProfileTweet-reply"
