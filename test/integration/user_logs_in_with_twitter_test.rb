@@ -1,5 +1,6 @@
 require "test_helper"
 class UserLogsInWithTwitterTest < ActionDispatch::IntegrationTest
+
   test "logging in without stubbing" do
     skip
     visit "/"
