@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   def self.from_omniauth(auth_info)
-    require 'byebug'; byebug
     if user = find_by(uid: auth_info.uid)
       user
     else
