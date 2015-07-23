@@ -11,4 +11,10 @@ class TweetsController < ApplicationController
     redirect_to root_path
   end
 
+  def unfollow
+    friend_name = params[:name]
+    friend = current_user.twitter_client.friends.select{|friend| friend.name == friend_name }
+    current_user.twitter_client.unfollow(friend)
+    redirect_to root_path
+  end
 end

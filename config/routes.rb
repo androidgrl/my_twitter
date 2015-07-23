@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 
   post '/tweet', to: 'tweets#create'
   post '/favorite', to: 'tweets#favorite_the_tweet', as: :favorite
+  post '/unfollow', to: 'tweets#unfollow', as: :unfollow
 end
