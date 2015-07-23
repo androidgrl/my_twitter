@@ -45,9 +45,9 @@ class UserLogsInWithTwitterTest < ActionDispatch::IntegrationTest
       provider: 'twitter',
       extra: {
         raw_info: {
-          user_id: "1234",
-          name: "Horace",
-          screen_name: "worace",
+          user_id: "2579384508",
+          name: "Jamie Kawahara",
+          screen_name: "androidgrl",
         }
       },
       credentials: {
