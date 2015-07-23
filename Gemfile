@@ -50,4 +50,5 @@ group :test do
   gem 'webmock'
   gem 'launchy'
   gem 'mocha'
+  gem 'simplecov'
 end

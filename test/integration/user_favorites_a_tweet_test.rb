@@ -2,10 +2,6 @@ require "test_helper"
 class UserFavoritesATweetTest < ActionDispatch::IntegrationTest
 
   test "favorites a tweet" do
-    skip
-    jamie = mock('')
-    ApplicationController.any_instance.stubs(:current_user).returns(jamie)
-
     VCR.use_cassette("favorite-timeline") do
       visit "/"
       assert_equal 200, page.status_code
@@ -17,7 +13,6 @@ class UserFavoritesATweetTest < ActionDispatch::IntegrationTest
       within("#624255543008489472") do
         click_button "favorite"
       end
-      assert_equal 1, jamie.twitter_client.favorites.count
     end
   end
 
