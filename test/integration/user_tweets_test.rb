@@ -1,28 +1,23 @@
 require "test_helper"
-class UserLogsInWithTwitterTest < ActionDispatch::IntegrationTest
+class UserTweetsTest < ActionDispatch::IntegrationTest
 
-  test "logging out" do
-    VCR.use_cassette("user-timeline") do
+  test "tweeting" do
+    VCR.use_cassette("tweeting-timeline") do
       visit "/"
       assert_equal 200, page.status_code
       click_on "Login"
-      click_on "Logout"
-      assert_equal "/", current_path
-      assert page.has_link?("Login")
-      refute page.has_link?("Logout")
-      refute page.has_content?("Jamie")
-    end
-  end
-
-  test "logging in" do
-    VCR.use_cassette("user-timeline") do
-      visit "/"
-      assert_equal 200, page.status_code
-      click_link "Login"
       assert_equal "/", current_path
       assert page.has_content?("Jamie")
-      assert page.has_link?("Logout")
-      assert page.has_css?(".tweet")
+      within(".sweet-tweetin") do
+        fill_in "Tweet", with: "Tweetin"
+      end
+      within(".my-submit-button") do
+        click_button "Submit"
+      end
+      assert_equal "/", current_path
+      within(".my-sweet-tweet") do
+        assert page.has_content?("Tweetin")
+      end
     end
   end
 

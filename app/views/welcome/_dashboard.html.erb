@@ -868,11 +868,15 @@ data-fouc-class-names="swift-loading"
   <div class="timeline-tweet-box">
     <div class="home-tweet-box tweet-box component tweet-user">
       <img class="top-timeline-tweet-box-user-image avatar size32" src="<%= current_user.profile_url %>" alt="">
+      <div class="my-submit-button">
+      <div class="sweet-tweetin">
           <%= form_tag("/tweet", method: "post") do %>
             <%= label_tag(:tweet, "Tweet") %>
             <%= text_field_tag(:tweet, "What's happening hot stuff?") %>
             <%= submit_tag("Submit") %>
           <% end %>
+          </div>
+          </div>
 
         <%#<form class="t1-form tweet-form%>
         <%#condensed"%>
@@ -1194,6 +1198,7 @@ data-fouc-class-names="swift-loading"
 </div>
 
     <div class="stream home-stream">
+      <div class="my-sweet-tweet">
         <ol class="stream-items js-navigable-stream" id="stream-items-id">
 <% current_user.twitter_timeline.each do |tweet| %>
       <li class="js-stream-item stream-item stream-item expanding-stream-item
@@ -1293,9 +1298,7 @@ data-expanded-footer="&lt;div class=&quot;js-tweet-details-fixer tweet-details-f
 
           <p class="u-hiddenVisually" aria-hidden="true" data-aria-label-part="1">Vikas Reddy retweeted DHH</p>
 
-
           <p class="TweetTextSize  js-tweet-text tweet-text" lang="en" data-aria-label-part="4"><%= distance_of_time_in_words(Time.new, tweet.created_at) %> ago <%= tweet.user.screen_name %> said:  <%= tweet.text %> <a href="https://t.co/F7QQUcYyoi" rel="nofollow" dir="ltr" data-expanded-url="https://twitter.com/dhh/status/623598101127897088" class="twitter-timeline-link u-hidden" target="_blank" title="https://twitter.com/dhh/status/623598101127897088" ><span class="tco-ellipsis"></span><span class="invisible">https://</span><span class="js-display-url">twitter.com/dhh/status/623</span><span class="invisible">598101127897088</span><span class="tco-ellipsis"><span class="invisible">&nbsp;</span>…</span></a></p>
-
 
 <p class="u-hiddenVisually" aria-hidden="true" data-aria-label-part="3">Vikas Reddy added,</p>
   <div class="expanded-content js-tweet-details-dropdown">
@@ -1434,7 +1437,7 @@ data-expanded-footer="&lt;div class=&quot;js-tweet-details-fixer tweet-details-f
 
 
 <% end %>
-
+      </div>
 
         </ol>
         <div class="stream-footer ">
