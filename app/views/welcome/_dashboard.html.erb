@@ -1348,9 +1348,7 @@ data-expanded-footer="&lt;div class=&quot;js-tweet-details-fixer tweet-details-f
 
 
       <div class="ProfileTweet-action ProfileTweet-action--favorite js-toggleState">
-        <button class="ProfileTweet-actionButton js-actionButton js-actionFavorite js-tooltip"
-          title="Favorite"
-          type="button">
+        <%= button_to "favorite", favorite_path(tweet_id: tweet.id) %>
           <span class="Icon Icon--favorite"></span>
           <span class="u-hiddenVisually">Favorite</span>
             <span class="ProfileTweet-actionCount ProfileTweet-actionCount--isZero">

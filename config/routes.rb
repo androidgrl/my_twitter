@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
 
   post '/tweet', to: 'tweets#create'
+  post '/favorite', to: 'tweets#favorite_the_tweet', as: :favorite
 end
